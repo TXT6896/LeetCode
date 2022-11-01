@@ -1,0 +1,45 @@
+package tao.hard;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+/**
+ * 寻找两个正序数组的中位数
+ */
+public class Solution1 {
+
+    public static void main(String[] args) {
+        Solution1 solution1 = new Solution1();
+
+        int[] nums1 = {1, 3};
+        int[] nums2 = {2};
+        System.out.println(solution1.findMedianSortedArrays(nums1, nums2));
+    }
+
+
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int[] arr = new int[nums1.length + nums2.length];
+        int i = 0, j = 0, z = 0;
+        while (i < nums1.length && j < nums2.length) {
+            if (nums1[i] < nums2[j]) {
+                arr[z++] = nums1[i++];
+                continue;
+            }
+            arr[z++] = nums2[j++];
+        }
+        while (i < nums1.length) {
+            arr[z++] = nums1[i++];
+        }
+        while (j < nums2.length) {
+            arr[z++] = nums2[j++];
+        }
+
+        if (arr.length % 2 == 0) return (double) (arr[arr.length / 2 - 1] + arr[arr.length / 2]) / 2;
+
+        return arr[arr.length / 2];
+    }
+
+
+}
