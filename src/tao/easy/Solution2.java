@@ -1,5 +1,8 @@
 package tao.easy;
 
+import java.util.Arrays;
+import java.util.Vector;
+
 /**
  * 最长公共前缀
  */
@@ -7,7 +10,7 @@ public class Solution2 {
 
     public static void main(String[] args) {
         Solution2 solution2 = new Solution2();
-        String[] strs = {"flower", "flow", "flight" };
+        String[] strs = {"flower", "flowc", "flight", "a" };
         System.out.println(solution2.longestCommonPrefix(strs));
     }
 

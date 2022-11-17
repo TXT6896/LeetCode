@@ -7,6 +7,9 @@ import java.util.Random;
 import java.util.stream.Collectors;
 
 public class Student implements Cloneable {
+    public static void main(String[] args) {
+        System.out.println(Long.valueOf("123"));
+    }
     private String username;
 
     public String getUsername() {
