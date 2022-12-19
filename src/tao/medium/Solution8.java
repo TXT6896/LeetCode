@@ -1,16 +1,15 @@
 package tao.medium;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
+
+import java.util.*;
 
 /**
  * 电话号码的字母组合
  */
 public class Solution8 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchFieldException {
+
         Solution8 solution8 = new Solution8();
         System.out.println(solution8.letterCombinations("").toString());
     }
@@ -25,6 +24,21 @@ public class Solution8 {
         }
 
         return list;
+    }
+
+    class Solution {
+        public List<String> generateParenthesis(int n) {
+            if (n == 1) {
+                return Arrays.asList("()");
+            }
+            Set<String> hs = new HashSet<>();
+            for (String s : generateParenthesis(n-1)) {
+                for (int i = 0; i < 2*n-2; i++) {
+                    hs.add(s.substring(0,i) + "()" + s.substring(i,s.length()));
+                }
+            }
+            return new ArrayList(hs);
+        }
     }
 
     public ArrayList<String> combine(List<String> list,String s) {

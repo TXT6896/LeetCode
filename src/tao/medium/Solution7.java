@@ -1,14 +1,8 @@
 package tao.medium;
 
 /**
- * Definition for singly-linked list.
- * public class ListNode {
- * int val;
- * ListNode next;
- * ListNode() {}
- * ListNode(int val) { this.val = val; }
- * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
+ * 删除链表倒数第n个节点，返回头节点
+ *
  */
 public class Solution7 {
     public static void main(String[] args) {
