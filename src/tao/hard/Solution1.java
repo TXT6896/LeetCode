@@ -1,9 +1,6 @@
 package tao.hard;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.UUID;
 
 /**
  * 寻找两个正序数组的中位数
@@ -11,11 +8,9 @@ import java.util.stream.Collectors;
 public class Solution1 {
 
     public static void main(String[] args) {
-        Solution1 solution1 = new Solution1();
+        System.out.println("sh2772249816850134344065195".length());
+        System.out.println(UUID.randomUUID().toString());
 
-        int[] nums1 = {1, 3};
-        int[] nums2 = {2};
-        System.out.println(solution1.findMedianSortedArrays(nums1, nums2));
     }
 
 

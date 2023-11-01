@@ -7,14 +7,14 @@ import java.util.Arrays;
  */
 public class Solution2 {
     public static void main(String[] args) {
-String s  = "085b33fb2d62beae5b7f87f16d1877de:股票自主交易1组;20817460e0f77a2b8449774d0b3625d0:股票自主交易2组;";
-String ss =  "085b33fb2d62beae5b7f87f16d1877de";
-        String substring = s.substring(s.indexOf(ss) + "085b33fb2d62beae5b7f87f16d1877de".length()+1);
+        String s = "085b33fb2d62beae5b7f87f16d1877de:股票自主交易1组;20817460e0f77a2b8449774d0b3625d0:股票自主交易2组;";
+        String ss = "085b33fb2d62beae5b7f87f16d1877de";
+        String substring = s.substring(s.indexOf(ss) + "085b33fb2d62beae5b7f87f16d1877de".length() + 1);
         System.out.println(substring);
         System.out.println(substring.substring(0, substring.indexOf(";")));
 
         String s1 = "skjhdf偶s";
-        System.out.println(s1.substring(0,s1.length()));
+        System.out.println(s1.substring(0, s1.length()));
 
 
     }
@@ -23,8 +23,8 @@ String ss =  "085b33fb2d62beae5b7f87f16d1877de";
         if (lists.length == 1) return lists[0];
         if (lists.length < 1) return null;
         int index = lists.length / 2;
-       // ListNode[] listLeft = new ListNode[index];
-        ListNode[] listLeft = Arrays.copyOf(lists,index);
+        // ListNode[] listLeft = new ListNode[index];
+        ListNode[] listLeft = Arrays.copyOf(lists, index);
         /*for (int i = 0; i < listLeft.length; i++) {
             listLeft[i] = lists[i];
         }*/
