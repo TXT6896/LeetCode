@@ -1,32 +1,30 @@
 package tao;
 
-import java.text.ParseException;
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
+import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Demo {
 
-    public static void main(String[] args) throws ParseException {
+    private static AtomicInteger inc = new AtomicInteger(0);
 
-        long timestamp = 1690819199000L; // 你的时间戳
-
-        // 使用时间戳创建Instant对象
-        Instant instant = Instant.ofEpochMilli(timestamp);
-
-        // 将Instant对象转换为LocalDateTime对象
-        LocalDateTime localDateTime = LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
-
-        System.out.println("LocalDateTime: " + localDateTime);
-
+    public static void main(String[] args) {
     }
-/*    public static void test(long i) {
 
-        // 将时间戳转换为LocalDateTime
-        LocalDateTime localDateTime = LocalDateTime.
+    public void method() {
+        synchronized (this) {
+            System.out.println("synchronized 代码块");
+        }
+    }
 
-        System.out.println("时间戳: " + i);
-        System.out.println("转换后的LocalDateTime: " + localDateTime);
-    }*/
 
+    public Object convert(Object[] objects) throws IllegalAccessException {
+        HashMap<String, Object> map = new HashMap<>();
+        for (Object object : objects) {
+            for (Field field : object.getClass().getDeclaredFields()) {
+                map.put(field.getName(),field.get(object));
+            }
+        }
+        return map;
+    }
 }
